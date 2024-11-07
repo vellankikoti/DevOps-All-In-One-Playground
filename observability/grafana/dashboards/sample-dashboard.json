@@ -1,35 +1,51 @@
 {
-  "id": null,
-  "title": "DevOps All-In-One Playground",
-  "tags": ["prometheus", "backend", "frontend"],
-  "timezone": "browser",
-  "panels": [
-    {
-      "type": "graph",
-      "title": "Backend Request Duration",
-      "targets": [
-        {
-          "expr": "rate(http_request_duration_seconds_sum[1m])",
-          "legendFormat": "Request Duration",
-          "interval": ""
-        }
-      ],
-      "xaxis": { "mode": "time" },
-      "yaxis": { "format": "s" }
-    },
-    {
-      "type": "graph",
-      "title": "Frontend Request Duration",
-      "targets": [
-        {
-          "expr": "rate(http_request_duration_seconds_sum[1m])",
-          "legendFormat": "Request Duration",
-          "interval": ""
-        }
-      ],
-      "xaxis": { "mode": "time" },
-      "yaxis": { "format": "s" }
-    }
-  ]
+  "dashboard": {
+    "title": "Application and System Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Backend Request Latency",
+        "targets": [
+          {
+            "expr": "rate(backend_request_latency_seconds[5m])",
+            "legendFormat": "Latency (s)",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Frontend Request Latency",
+        "targets": [
+          {
+            "expr": "rate(frontend_request_latency_seconds[5m])",
+            "legendFormat": "Latency (s)",
+            "refId": "B"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "CPU Usage",
+        "targets": [
+          {
+            "expr": "rate(container_cpu_usage_seconds_total[5m])",
+            "legendFormat": "CPU Usage",
+            "refId": "C"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Memory Usage",
+        "targets": [
+          {
+            "expr": "container_memory_usage_bytes",
+            "legendFormat": "Memory Usage",
+            "refId": "D"
+          }
+        ]
+      }
+    ]
+  }
 }
-

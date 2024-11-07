@@ -1,1 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devops-playground
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/vellankikoti/DevOps-All-In-One-Playground.git'
+    targetRevision: main
+    path: kubernetes
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 

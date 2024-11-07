@@ -1,3 +1,4 @@
+
 # Installation Guide
 
 Follow these steps to set up the DevOps All-In-One Playground on your local machine or development environment.
@@ -16,3 +17,27 @@ Follow these steps to set up the DevOps All-In-One Playground on your local mach
    ```bash
    git clone https://github.com/vellankikoti/DevOps-All-In-One-Playground.git
    cd DevOps-All-In-One-Playground
+   ```
+
+2. Navigate to the respective directories and build the Docker images:
+   ```bash
+   cd frontend
+   docker build -t your_dockerhub_username/devops-frontend:latest .
+   
+   cd ../backend
+   docker build -t your_dockerhub_username/devops-backend:latest .
+   ```
+
+3. Start the services using Docker Compose (if applicable):
+   ```bash
+   docker-compose up -d
+   ```
+
+4. Apply the Kubernetes configurations:
+   ```bash
+   kubectl apply -f kubernetes/
+   ```
+
+5. Set up observability tools by following the respective configuration guides in the observability directory.
+
+You are now ready to use the DevOps All-In-One Playground!

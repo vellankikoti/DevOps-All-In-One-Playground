@@ -95,6 +95,10 @@ With these tools, you can observe real-time metrics, view traces, and monitor th
 - **Monitoring and Observability**: Set up comprehensive monitoring solutions to gain insights into application performance.
 - **Cloud-Ready Deployments**: Deploy on any cloud platform or on-premises Kubernetes cluster.
 
+## Getting Started
+
+For detailed setup instructions, refer to the [Setup Guide](docs/setup_guide.md).
+
 ---
 
 **Enjoy exploring the DevOps-All-In-One-Playground!** This repository is designed to help DevOps engineers learn, deploy, and practice DevOps concepts through hands-on, real-world scenarios.

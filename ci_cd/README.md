@@ -1,19 +1,21 @@
-# Jenkins - DevOps All-In-One Playground
+# Jenkins - CI/CD Setup for DevOps All-In-One Playground
 
-This folder contains the Jenkins pipeline configuration for automating the CI/CD pipeline. The Jenkins pipeline, defined in `Jenkinsfile`, will build, test, and deploy the application to Kubernetes.
+This folder contains the Jenkins pipeline configuration for automating the CI/CD process for the DevOps All-In-One Playground application.
 
 ## Prerequisites
 
-1. **Jenkins**: Ensure Jenkins is installed and accessible.
-2. **Docker Hub Credentials**: Set up Docker Hub credentials in Jenkins as `docker-username` and `docker-password`.
-3. **Kubernetes and ArgoCD**: Installed and configured on your Kubernetes cluster.
+1. **Jenkins**: Ensure Jenkins is installed and running.
+2. **Docker**: Installed on the Jenkins server for building and pushing images.
+3. **Docker Hub Credentials**: Set up Docker Hub credentials in Jenkins with IDs `docker-username` and `docker-password`.
+4. **kubectl**: Installed and configured on the Jenkins server to deploy applications to Kubernetes.
+5. **ArgoCD**: Installed and configured to manage application deployments.
 
 ## Setting Up the Pipeline
 
 ### Step 1: Add Docker Hub Credentials to Jenkins
 
 1. Go to **Jenkins Dashboard** > **Manage Jenkins** > **Manage Credentials**.
-2. Add **Docker Hub credentials** with the ID `docker-credentials`:
+2. Add **Docker Hub credentials** with IDs `docker-username` and `docker-password`:
    - **Username**: Your Docker Hub username.
    - **Password**: Your Docker Hub password.
 
@@ -34,9 +36,9 @@ This folder contains the Jenkins pipeline configuration for automating the CI/CD
    - **Build Docker Images**: Build Docker images for the frontend and backend.
    - **Push Docker Images**: Push the images to Docker Hub.
    - **Deploy to Kubernetes**: Apply Kubernetes configuration files.
-   - **Sync ArgoCD**: Trigger ArgoCD to sync the latest changes.
+   - **Sync ArgoCD**: Automatically sync the deployment in ArgoCD.
 
-### Example Pipeline Stages
+## Example Pipeline Stages
 
 - **Checkout**: Clones the repository.
 - **Build Docker Images**: Builds Docker images for the frontend and backend.
@@ -46,7 +48,6 @@ This folder contains the Jenkins pipeline configuration for automating the CI/CD
 
 ---
 
-This Jenkins pipeline automates the entire build, test, and deployment process, ensuring continuous integration and delivery for the DevOps All-In-One Playground application.
+This Jenkins setup automates the entire build, test, and deployment process, ensuring continuous integration and delivery for the DevOps All-In-One Playground application.
 
 ---
-

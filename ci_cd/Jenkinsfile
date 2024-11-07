@@ -1,1 +1,43 @@
+pipeline {
+    agent any
+    environment {
+        DOCKER_USERNAME = credentials('docker-username') // Docker Hub username in Jenkins credentials
+        DOCKER_PASSWORD = credentials('docker-password') // Docker Hub password in Jenkins credentials
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/vellankikoti/DevOps-All-In-One-Playground.git'
+            }
+        }
+        stage('Build Docker Images') {
+            steps {
+                script {
+                    docker.build("devops-frontend:latest", "./frontend")
+                    docker.build("devops-backend:latest", "./backend")
+                }
+            }
+        }
+        stage('Push Docker Images') {
+            steps {
+                script {
+                    docker.withRegistry('', 'docker-credentials') {
+                        docker.image('devops-frontend:latest').push()
+                        docker.image('devops-backend:latest').push()
+                    }
+                }
+            }
+        }
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f kubernetes/'
+            }
+        }
+        stage('Sync ArgoCD') {
+            steps {
+                sh 'argocd app sync devops-playground'
+            }
+        }
+    }
+}
 

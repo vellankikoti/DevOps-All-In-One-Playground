@@ -1,1 +1,35 @@
+{
+  "id": null,
+  "title": "DevOps All-In-One Playground",
+  "tags": ["prometheus", "backend", "frontend"],
+  "timezone": "browser",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Backend Request Duration",
+      "targets": [
+        {
+          "expr": "rate(http_request_duration_seconds_sum[1m])",
+          "legendFormat": "Request Duration",
+          "interval": ""
+        }
+      ],
+      "xaxis": { "mode": "time" },
+      "yaxis": { "format": "s" }
+    },
+    {
+      "type": "graph",
+      "title": "Frontend Request Duration",
+      "targets": [
+        {
+          "expr": "rate(http_request_duration_seconds_sum[1m])",
+          "legendFormat": "Request Duration",
+          "interval": ""
+        }
+      ],
+      "xaxis": { "mode": "time" },
+      "yaxis": { "format": "s" }
+    }
+  ]
+}
 

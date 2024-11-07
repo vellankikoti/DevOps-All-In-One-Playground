@@ -22,8 +22,9 @@ DevOps-All-In-One-Playground/
 ├── backend/                # Node.js API for CRUD operations
 ├── database/               # PostgreSQL setup and schema
 ├── observability/          # Prometheus, Grafana, OpenTelemetry, Jaeger configurations
-├── kubernetes/             # Kubernetes YAML files for deployments and services
+├── kubernetes/            # Kubernetes YAML files for deployments and services
 ├── .github/workflows/      # CI/CD pipeline configuration
+├── docs/                   # Documentation for setup and usage
 └── docker-compose.yml      # Docker Compose setup for local development
 ```
 
@@ -41,7 +42,7 @@ This guide will help you get the **DevOps-All-In-One-Playground** up and running
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/DevOps-All-In-One-Playground.git
+git clone https://github.com/vellankikoti/DevOps-All-In-One-Playground.git
 cd DevOps-All-In-One-Playground
 ```
 

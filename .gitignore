@@ -1,0 +1,19 @@
+# Node Modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Docker
+*.container
+*.image
+
+# Local env files
+.env
+.env.local
+
+# Terraform files
+*.tfstate
+*.tfstate.backup

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: database-app
+  namespace: argocd
+spec:
+  project: devops-project
+  source:
+    repoURL: 'https://github.com/your-repo-path'
+    targetRevision: HEAD
+    path: kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: devops-playground
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

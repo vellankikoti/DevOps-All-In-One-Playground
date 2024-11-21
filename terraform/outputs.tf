@@ -1,18 +1,14 @@
-output "cluster_name" {
-  value = aws_eks_cluster.devops_cluster.name
+output "vpc_id" {
+  description = "The ID of the created VPC."
+  value       = aws_vpc.main.id
 }
 
-output "kubeconfig" {
-  value = <<EOT
-apiVersion: v1
-clusters:
-- cluster:
-    server: ${aws_eks_cluster.devops_cluster.endpoint}
-  name: eks
-contexts:
-- context:
-    cluster: eks
-  name: eks
-current-context: eks
-EOT
+output "eks_cluster_name" {
+  description = "The name of the EKS cluster."
+  value       = aws_eks_cluster.cluster.name
+}
+
+output "eks_cluster_endpoint" {
+  description = "The endpoint of the EKS cluster."
+  value       = aws_eks_cluster.cluster.endpoint
 }

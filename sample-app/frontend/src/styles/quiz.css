@@ -1,0 +1,19 @@
+.welcome, .quiz {
+  text-align: center;
+  padding: 20px;
+}
+
+.option-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option-btn:hover {
+  background-color: #e0a800;
+}

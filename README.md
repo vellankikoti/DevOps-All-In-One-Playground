@@ -18,14 +18,86 @@ This playground is designed to bring together critical DevOps tools like Git, Je
 
 ```plaintext
 DevOps-All-In-One-Playground/
-├── frontend/               # React app for UI
-├── backend/                # Node.js API for CRUD operations
-├── database/               # PostgreSQL setup and schema
-├── observability/          # Prometheus, Grafana, OpenTelemetry, Jaeger configurations
-├── kubernetes/            # Kubernetes YAML files for deployments and services
-├── .github/workflows/      # CI/CD pipeline configuration
-├── docs/                   # Documentation for setup and usage
-└── docker-compose.yml      # Docker Compose setup for local development
+├── backend/                      # Backend application (Flask)
+│   ├── app.py                    # Main Flask application file
+│   ├── requirements.txt          # Python dependencies
+│   ├── Dockerfile                # Docker configuration for backend
+│   ├── questions.json            # Quiz questions for the application
+│   ├── tests/                    # Unit tests for backend
+│   │   └── test_app.py           # Example test file
+│   └── README.md                 # Backend documentation
+├── frontend/                     # Frontend application (React)
+│   ├── src/                      # Source files
+│   │   ├── App.js                # Main application file
+│   │   ├── Home.js               # Landing page component
+│   │   ├── Progress.js           # Progress tracking component
+│   │   ├── Result.js             # Result display component
+│   │   ├── components/           # Additional reusable components
+│   │   │   ├── Header.js         # Header for navigation
+│   │   │   └── Challenge.js      # Quiz component for each section
+│   │   ├── styles/               # CSS files for styling
+│   │   │   ├── App.css           # Global styles
+│   │   │   ├── Header.css        # Header-specific styles
+│   │   │   └── Progress.css      # Progress tracker styles
+│   │   ├── api/                  # API utility functions
+│   │   │   └── api.js            # Functions for backend interaction
+│   ├── index.js                  # Entry point for React application
+│   ├── public/                   # Static files
+│   │   └── index.html            # Main HTML file
+│   ├── Dockerfile                # Docker configuration for frontend
+│   └── README.md                 # Frontend documentation
+├── database/                     # Database setup
+│   ├── init.sql                  # SQL script for initializing database
+│   ├── Dockerfile                # Docker configuration for database
+│   └── README.md                 # Database documentation
+├── docker/                       # Docker Compose setup
+│   ├── docker-compose.yml        # Compose configuration for all services
+│   ├── .env                      # Environment variables for Docker
+│   └── README.md                 # Docker documentation
+├── kubernetes/                   # Kubernetes manifests
+│   ├── namespace.yaml            # Namespace configuration
+│   ├── ingress.yaml              # Ingress configuration
+│   ├── frontend-deployment.yaml  # Deployment for frontend
+│   ├── backend-deployment.yaml   # Deployment for backend
+│   ├── database-deployment.yaml  # Deployment for database
+│   ├── database-pvc.yaml         # Persistent Volume Claim for database
+│   ├── service.yaml              # Service configuration for all components
+│   └── README.md                 # Kubernetes documentation
+├── argocd/                       # ArgoCD configuration
+│   ├── applications/             # Application definitions for ArgoCD
+│   │   └── devops-app.yaml       # Example application
+│   ├── projects/                 # Project definitions for ArgoCD
+│   │   └── devops-project.yaml   # Example project
+│   └── README.md                 # ArgoCD documentation
+├── terraform/                    # Infrastructure as Code (IaC) setup
+│   ├── main.tf                   # Main Terraform configuration
+│   ├── variables.tf              # Variables for Terraform
+│   ├── outputs.tf                # Outputs for Terraform
+│   ├── eks-cluster.tf            # EKS cluster setup
+│   ├── s3-bucket.tf              # S3 bucket for state storage
+│   └── README.md                 # Terraform documentation
+├── observability/                # Monitoring and observability
+│   ├── grafana/                  # Grafana configuration
+│   │   ├── dashboards/           # Prebuilt dashboards
+│   │   │   ├── k8s-dashboard.json # Kubernetes monitoring dashboard
+│   │   │   ├── app-dashboard.json # Application monitoring dashboard
+│   │   │   └── server-dashboard.json # Server monitoring dashboard
+│   ├── prometheus/               # Prometheus configuration
+│   │   ├── prometheus.yml        # Prometheus config file
+│   │   ├── k8s-metrics-rules.yml # Kubernetes metrics alert rules
+│   │   └── server-metrics-rules.yml # Server metrics alert rules
+│   ├── opentelemetry/            # OpenTelemetry configuration
+│   │   └── otel-collector.yml    # OpenTelemetry collector config
+│   ├── jaeger/                   # Jaeger tracing setup
+│   │   ├── jaeger-deployment.yaml # Jaeger deployment config
+│   │   └── jaeger-service.yaml   # Jaeger service config
+│   └── README.md                 # Observability documentation
+├── docs/                         # Documentation
+│   ├── INSTALL.md                # Installation instructions
+│   ├── USAGE.md                  # Usage instructions
+│   ├── CONTRIBUTING.md           # Contribution guidelines
+│   └── README.md                 # General documentation
+└── LICENSE.md                    # Licensing information
 ```
 
 Each folder contains a `README.md` with specific setup instructions for that component.

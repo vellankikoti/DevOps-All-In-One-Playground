@@ -1,105 +1,117 @@
+```markdown
+# Observability Configuration
 
-# Observability - DevOps All-In-One Playground
+This directory contains configurations for setting up a complete observability stack for the interactive DevOps quiz platform. It includes monitoring, logging, and tracing using Prometheus, Grafana, and Jaeger, along with OpenTelemetry integration for distributed tracing.
 
-This folder contains configurations for setting up observability using Prometheus, Grafana, and OpenTelemetry. These tools collect, visualize, and analyze metrics and traces from the backend and frontend services in the application.
+## Features
 
-## Prometheus Setup
+- **Monitoring**: Prometheus collects metrics from Kubernetes nodes, pods, and the application.
+- **Dashboards**: Grafana visualizes metrics with pre-configured dashboards for Kubernetes resources and application performance.
+- **Tracing**: Jaeger provides end-to-end distributed tracing for debugging and performance analysis.
+- **OpenTelemetry**: Captures and exports telemetry data (logs, metrics, and traces) to observability tools.
 
-Prometheus is configured to scrape and store metrics from multiple sources, including:
-- **Backend**: Exposed on port `5000`.
-- **Frontend**: Exposed on port `3000`.
-- **Prometheus** itself for self-monitoring.
-- **OpenTelemetry Collector** for distributed tracing and additional metrics.
+## Components
 
-### Configuration
+### 1. Prometheus
+- Collects metrics from Kubernetes and application endpoints.
+- Configured to scrape metrics from:
+  - Kubernetes API server
+  - Application endpoints (backend and frontend)
 
-- **File**: `prometheus.yml`
-- **Usage**: Modify `scrape_configs` to add or update target endpoints for metrics scraping.
+### 2. Grafana
+- Visualizes metrics with dashboards for:
+  - Kubernetes cluster health
+  - Application resource usage
+  - Database performance
+- Pre-configured with Prometheus as the data source.
 
-### Start Prometheus
+### 3. Jaeger
+- Provides distributed tracing to monitor application workflows.
+- Captures traces for user interactions like login, quiz attempts, and score generation.
 
-1. Run Prometheus with the configuration file:
-   ```bash
-   prometheus --config.file=observability/prometheus.yml
-   ```
+### 4. OpenTelemetry
+- Integrated into the application for standardized telemetry data.
+- Sends traces to Jaeger and metrics to Prometheus.
 
-2. Access Prometheus at:
-   ```
-   http://localhost:9090
-   ```
+## Prerequisites
 
----
+- A running Kubernetes cluster with sufficient resources.
+- Kubectl CLI installed and configured.
 
-## Grafana Setup
+## File Descriptions
 
-Grafana provides a user-friendly interface to visualize metrics stored in Prometheus.
+- **`prometheus.yaml`**: Prometheus deployment and configuration.
+- **`grafana.yaml`**: Grafana deployment with pre-configured dashboards.
+- **`jaeger.yaml`**: Jaeger deployment and service for distributed tracing.
+- **`otel-collector.yaml`**: OpenTelemetry collector configuration for logs, metrics, and traces.
+- **`dashboards/`**: Grafana dashboard JSON files for easy import.
 
-### Import Dashboard
+## Deployment Steps
 
-- **File**: `dashboards/sample-dashboard.json`
-- **Usage**: Import this JSON file into Grafana to visualize metrics from the backend, frontend, and system resources (CPU, memory).
+### 1. Deploy Prometheus
+```bash
+kubectl apply -f prometheus.yaml
+```
 
-### Start Grafana
+### 2. Deploy Grafana
+```bash
+kubectl apply -f grafana.yaml
+```
+- Access Grafana:
+  ```bash
+  kubectl -n monitoring port-forward svc/grafana 3000:3000
+  ```
+  Open your browser at `http://localhost:3000`. Default credentials: `admin/admin`.
 
-1. Run Grafana:
-   ```bash
-   grafana-server
-   ```
-2. Access Grafana at:
-   ```
-   http://localhost:3000
-   ```
+### 3. Deploy Jaeger
+```bash
+kubectl apply -f jaeger.yaml
+```
+- Access Jaeger:
+  ```bash
+  kubectl -n monitoring port-forward svc/jaeger-query 16686:16686
+  ```
+  Open your browser at `http://localhost:16686`.
 
----
+### 4. Deploy OpenTelemetry Collector
+```bash
+kubectl apply -f otel-collector.yaml
+```
 
-## OpenTelemetry Setup
+### 5. Verify Configuration
+- **Prometheus**: Check targets and scrape configurations at `http://localhost:9090/targets`.
+- **Grafana**: Import dashboards from the `dashboards/` directory.
+- **Jaeger**: Trace application workflows via the Jaeger UI.
 
-OpenTelemetry is configured to collect traces and additional metrics from the backend and frontend, then exports them to Prometheus.
+## Notes
 
-### Configuration
+- **Application Instrumentation**:
+  - Ensure the backend application has Prometheus metrics endpoints and OpenTelemetry libraries configured.
+  - Integrate logs and traces for key user actions (e.g., login, quiz attempts).
 
-- **File**: `opentelemetry/otel_config.yaml`
-- **Usage**: Update endpoints and exporters as needed.
+- **Resource Limits**:
+  - All deployments include resource limits for stability in production environments.
 
-### Start OpenTelemetry Collector
+- **Custom Dashboards**:
+  - Modify or create dashboards in the `dashboards/` directory and import them into Grafana.
 
-1. Run the OpenTelemetry collector:
-   ```bash
-   otelcol --config=observability/opentelemetry/otel_config.yaml
-   ```
+## Pre-configured Dashboards
 
----
+1. **Kubernetes Cluster Health**:
+   - Node usage (CPU, memory, disk)
+   - Pod status and resource usage
+2. **Application Metrics**:
+   - Backend API latency and request count
+   - Database query performance
+3. **User Analytics**:
+   - Active users
+   - Quiz completion rates
+4. **Tracing Details**:
+   - User interactions across services via Jaeger.
 
-## Custom Metrics with OpenTelemetry
+## Conclusion
 
-The `metrics.py` script collects custom application metrics and exposes them for scraping by Prometheus.
+This observability stack provides a comprehensive view of the platform's health and performance. Logs, metrics, and traces are integrated to ensure seamless debugging and proactive issue resolution.
 
-### File: `opentelemetry/metrics.py`
-
-This script sets up a Flask application that provides metrics on request latency and total request count.
-
-#### Usage
-
-1. Ensure you have the required packages installed:
-   ```bash
-   pip install flask prometheus_client
-   ```
-
-2. Run the script:
-   ```bash
-   python opentelemetry/metrics.py
-   ```
-
-3. Access the metrics at:
-   ```
-   http://localhost:8000/metrics
-   ```
-
-4. The application processes requests on:
-   ```
-   http://localhost:5000/process
-   ```
-
-With this setup, you can monitor the application's performance and visualize key metrics and traces in real-time.
-
----
+For troubleshooting or enhancements, refer to the individual configurations or explore [Prometheus Documentation](https://prometheus.io/docs/), [Grafana Documentation](https://grafana.com/docs/), and [Jaeger Documentation](https://www.jaegertracing.io/docs/).
+```

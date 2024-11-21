@@ -1,56 +1,76 @@
+# Kubernetes Configuration
 
-# Kubernetes Deployment - DevOps All-In-One Playground
+This directory contains Kubernetes manifests for deploying the interactive DevOps quiz platform, including backend, frontend, and database components. The configuration is designed for production-grade scalability and efficiency.
 
-This Kubernetes setup allows you to deploy the DevOps All-In-One Playground application on a Kubernetes cluster. It includes configurations for the frontend, backend, and PostgreSQL database.
+## Components
+
+### 1. Backend
+- **Deployment**: Manages backend application pods.
+- **Service**: Exposes backend to the frontend for API interactions.
+- **Resource Limits**: Configured to ensure optimal performance.
+
+### 2. Frontend
+- **Deployment**: Hosts the React-based frontend application.
+- **Service**: Makes the frontend accessible to users.
+- **Ingress**: Configures domain and HTTPS for public access.
+
+### 3. Database
+- **Deployment**: Runs the database for storing user data and quiz questions.
+- **Service**: Exposes the database internally to the backend.
+- **Persistent Volume**: Ensures data persistence.
+
+### 4. Monitoring and Observability
+- **Prometheus**: Collects metrics from Kubernetes nodes and pods.
+- **Grafana**: Visualizes metrics with pre-configured dashboards.
+- **Jaeger**: Traces application workflows for debugging.
+
+## File Descriptions
+
+- **`deployment.yaml`**: Defines pod specifications for each component.
+- **`service.yaml`**: Exposes components within the cluster or to the public.
+- **`ingress.yaml`**: Handles external access via domain names and HTTPS.
+- **`namespace.yaml`**: Isolates resources for better organization.
 
 ## Prerequisites
-- **Kubernetes** and **kubectl** installed
-- **Docker** to build images, if necessary
 
-## Deploying the Application
+- Kubernetes cluster (minikube, kind, or a managed service like GKE, EKS, or AKS).
+- Kubectl CLI installed and configured.
 
-### Step 1: Apply ConfigMap for Database Initialization
-1. Create a ConfigMap for the PostgreSQL `init.sql` file:
+## Deployment Steps
+
+1. **Create a Namespace**:
    ```bash
-   kubectl apply -f kubernetes/db-init-config.yaml
+   kubectl apply -f namespace.yaml
    ```
 
-### Step 2: Deploy the Database
-1. Deploy the PostgreSQL database:
+2. **Deploy Backend**:
    ```bash
-   kubectl apply -f kubernetes/database-deployment.yaml
+   kubectl apply -f backend-deployment.yaml
+   kubectl apply -f backend-service.yaml
    ```
 
-### Step 3: Deploy the Backend Service
-1. Deploy the backend service with environment variables for database connection:
+3. **Deploy Frontend**:
    ```bash
-   kubectl apply -f kubernetes/backend-deployment.yaml
+   kubectl apply -f frontend-deployment.yaml
+   kubectl apply -f frontend-service.yaml
+   kubectl apply -f ingress.yaml
    ```
 
-### Step 4: Deploy the Frontend Service
-1. Deploy the frontend service:
+4. **Deploy Database**:
    ```bash
-   kubectl apply -f kubernetes/frontend-deployment.yaml
+   kubectl apply -f database-deployment.yaml
+   kubectl apply -f database-service.yaml
    ```
 
-## Verify Deployments
-
-1. Check that all pods are running:
+5. **Verify Deployments**:
    ```bash
-   kubectl get pods
+   kubectl get pods -n <namespace>
+   kubectl get svc -n <namespace>
    ```
 
-2. Check services to find NodePort or LoadBalancer IPs for accessing frontend and backend:
-   ```bash
-   kubectl get services
-   ```
+## Notes
 
-### Accessing the Application
-
-- **Frontend**: Access using the IP and NodePort displayed under `frontend-service`.
-- **Backend**: Access using the IP and NodePort displayed under `backend-service`.
-
-This Kubernetes setup is designed to provide seamless deployment, scaling, and access to all application components.
-
----
+- **Resource Limits**: All deployments include resource requests and limits for production stability.
+- **Ingress**: Ensure DNS settings point to your cluster's ingress controller.
+- **Secrets**: Use Kubernetes Secrets for sensitive data like database credentials.
 

@@ -1,0 +1,9 @@
+Flask==2.3.2
+Flask-CORS==3.0.10
+Flask-SQLAlchemy==2.5.1
+psycopg2-binary==2.9.1
+prometheus-flask-exporter==0.18.2
+opentelemetry-api==1.11.1
+opentelemetry-sdk==1.11.1
+opentelemetry-instrumentation-flask==0.30b1
+gunicorn==20.1.0

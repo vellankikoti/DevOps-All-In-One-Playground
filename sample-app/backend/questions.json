@@ -1,0 +1,432 @@
+{
+    "Linux": [
+        {"id": 1, "question": "What does 'ls' command do?", "options": ["List files", "Delete files", "Create files", "Rename files"], "answer": "List files"},
+        {"id": 2, "question": "Which command is used to create a directory?", "options": ["mkdir", "rmdir", "cd", "touch"], "answer": "mkdir"},
+        {"id": 3, "question": "What is the use of 'chmod' command?", "options": ["Change file permissions", "Change directory", "Move files", "Delete files"], "answer": "Change file permissions"},
+        {"id": 4, "question": "What is the default shell in Linux?", "options": ["Bash", "Zsh", "Fish", "Tcsh"], "answer": "Bash"},
+        {"id": 5, "question": "What does 'pwd' command do?", "options": ["Print current directory", "Create new directory", "List files", "Delete files"], "answer": "Print current directory"},
+        {"id": 6, "question": "What is the purpose of 'grep'?", "options": ["Search for patterns in files", "Delete files", "List files", "Change file permissions"], "answer": "Search for patterns in files"},
+        {"id": 7, "question": "What does 'man' command do?", "options": ["Displays manual pages", "Deletes files", "Changes directories", "Lists files"], "answer": "Displays manual pages"},
+        {"id": 8, "question": "What does 'touch' command do?", "options": ["Creates an empty file", "Deletes a file", "Changes directory", "Lists files"], "answer": "Creates an empty file"},
+        {"id": 9, "question": "How to check the current disk usage?", "options": ["df -h", "du -sh", "ls -lh", "pwd"], "answer": "df -h"},
+        {"id": 10, "question": "What is the use of 'top' command?", "options": ["Monitor processes", "List files", "Create users", "Change permissions"], "answer": "Monitor processes"}
+    ],
+    "Python": [
+        {"id": 1, "question": "What is a lambda function in Python?", "options": ["Anonymous function", "Named function", "Recursive function", "Generator"], "answer": "Anonymous function"},
+        {"id": 2, "question": "Which keyword is used to create a function?", "options": ["def", "function", "lambda", "create"], "answer": "def"},
+        {"id": 3, "question": "What is a Python dictionary?", "options": ["Key-value pairs", "List of elements", "Immutable data", "Dynamic data"], "answer": "Key-value pairs"},
+        {"id": 4, "question": "What does 'len()' function do?", "options": ["Returns length of an object", "Creates a list", "Deletes an item", "Reverses a list"], "answer": "Returns length of an object"},
+        {"id": 5, "question": "What is the purpose of 'yield' keyword?", "options": ["Generate values", "Create classes", "Define functions", "Stop execution"], "answer": "Generate values"},
+        {"id": 6, "question": "What does 'pip' stand for?", "options": ["Pip installs packages", "Python interpreter program", "Package index program", "None of these"], "answer": "Pip installs packages"},
+        {"id": 7, "question": "What is the difference between a list and a tuple?", "options": ["Lists are mutable, tuples are immutable", "Tuples are mutable, lists are immutable", "Both are mutable", "Both are immutable"], "answer": "Lists are mutable, tuples are immutable"},
+        {"id": 8, "question": "What does '==' operator check?", "options": ["Equality", "Identity", "Assignment", "Comparison"], "answer": "Equality"},
+        {"id": 9, "question": "What is a Python set?", "options": ["Collection of unique elements", "Collection of ordered elements", "Mutable dictionary", "Immutable list"], "answer": "Collection of unique elements"},
+        {"id": 10, "question": "How do you create a class in Python?", "options": ["Using the 'class' keyword", "Using the 'def' keyword", "Using the 'struct' keyword", "Using the 'new' keyword"], "answer": "Using the 'class' keyword"}
+    ],
+    "Git": [
+        {"id": 1, "question": "What does 'git init' do?", "options": ["Initializes a repository", "Creates a branch", "Commits changes", "Pushes changes"], "answer": "Initializes a repository"},
+        {"id": 2, "question": "What is a 'commit' in Git?", "options": ["Snapshot of changes", "Deleting a file", "Renaming a branch", "Pushing code"], "answer": "Snapshot of changes"},
+        {"id": 3, "question": "What does 'git branch' do?", "options": ["Lists branches", "Creates a branch", "Deletes a branch", "All of the above"], "answer": "All of the above"},
+        {"id": 4, "question": "What is the use of 'git clone'?", "options": ["Copies a repository", "Deletes a repository", "Creates a branch", "Pushes code"], "answer": "Copies a repository"},
+        {"id": 5, "question": "What does 'git merge' do?", "options": ["Combines branches", "Deletes a branch", "Pulls changes", "Pushes changes"], "answer": "Combines branches"},
+        {"id": 6, "question": "What is the purpose of 'git pull'?", "options": ["Fetch and merge changes", "Create a branch", "Delete a repository", "Push changes"], "answer": "Fetch and merge changes"},
+        {"id": 7, "question": "What does 'git status' display?", "options": ["Current state of the repository", "Commits history", "Remote branches", "Push status"], "answer": "Current state of the repository"},
+        {"id": 8, "question": "How do you resolve merge conflicts?", "options": ["Manually edit files", "Use 'git reset'", "Use 'git revert'", "Ignore the conflict"], "answer": "Manually edit files"},
+        {"id": 9, "question": "What is the purpose of '.gitignore' file?", "options": ["Ignore specified files", "Delete files", "Track files", "Merge files"], "answer": "Ignore specified files"},
+        {"id": 10, "question": "What does 'git log' show?", "options": ["Commit history", "Current branch", "File changes", "Push status"], "answer": "Commit history"}
+    ],
+    
+        "Jenkins": [
+            {
+                "id": 1,
+                "question": "What is Jenkins?",
+                "options": ["Automation server", "CI/CD tool", "Build tool", "All of the above"],
+                "answer": "All of the above"
+            },
+            {
+                "id": 2,
+                "question": "What is a Jenkins pipeline?",
+                "options": ["A way to model CI/CD", "A monitoring tool", "A Docker image", "An artifact repository"],
+                "answer": "A way to model CI/CD"
+            },
+            {
+                "id": 3,
+                "question": "Which file format is used for declarative pipelines?",
+                "options": ["JSON", "YAML", "XML", "Groovy"],
+                "answer": "Groovy"
+            },
+            {
+                "id": 4,
+                "question": "What does 'build now' do in Jenkins?",
+                "options": ["Triggers a job", "Deletes a job", "Clones a repository", "Sets up a pipeline"],
+                "answer": "Triggers a job"
+            },
+            {
+                "id": 5,
+                "question": "What is a Jenkins node?",
+                "options": ["A machine Jenkins can use", "A type of Groovy script", "An artifact repository", "A monitoring tool"],
+                "answer": "A machine Jenkins can use"
+            },
+            {
+                "id": 6,
+                "question": "How do you secure Jenkins?",
+                "options": ["Enable authentication", "Use role-based authorization", "Restrict access to certain IPs", "All of the above"],
+                "answer": "All of the above"
+            },
+            {
+                "id": 7,
+                "question": "What is a Jenkins agent?",
+                "options": ["A slave node", "A master node", "A job", "A pipeline"],
+                "answer": "A slave node"
+            },
+            {
+                "id": 8,
+                "question": "What does 'archiveArtifacts' do in a pipeline?",
+                "options": ["Stores build outputs", "Triggers a build", "Deletes a job", "Sets pipeline parameters"],
+                "answer": "Stores build outputs"
+            },
+            {
+                "id": 9,
+                "question": "What is the purpose of a Jenkinsfile?",
+                "options": ["Defines a pipeline", "Stores build artifacts", "Hosts Git repositories", "Manages Docker images"],
+                "answer": "Defines a pipeline"
+            },
+            {
+                "id": 10,
+                "question": "Which plugin allows parameterized builds in Jenkins?",
+                "options": ["Parameterized Trigger Plugin", "Pipeline Plugin", "Git Plugin", "Docker Plugin"],
+                "answer": "Parameterized Trigger Plugin"
+            }
+        ],
+        "Ansible": [
+            {
+                "id": 1,
+                "question": "What is an Ansible playbook?",
+                "options": ["YAML file defining tasks", "Python script", "JSON file", "Bash script"],
+                "answer": "YAML file defining tasks"
+            },
+            {
+                "id": 2,
+                "question": "What is an inventory file in Ansible?",
+                "options": ["A file listing target hosts", "A configuration file", "A task list", "A script"],
+                "answer": "A file listing target hosts"
+            },
+            {
+                "id": 3,
+                "question": "What does 'ansible-playbook' command do?",
+                "options": ["Runs a playbook", "Installs Ansible", "Configures the environment", "Tests Ansible modules"],
+                "answer": "Runs a playbook"
+            },
+            {
+                "id": 4,
+                "question": "What are Ansible roles used for?",
+                "options": ["Organizing playbooks", "Managing SSH keys", "Version control", "Monitoring tasks"],
+                "answer": "Organizing playbooks"
+            },
+            {
+                "id": 5,
+                "question": "What does 'handlers' section in playbooks do?",
+                "options": ["Define tasks triggered by other tasks", "Configure inventory", "List playbooks", "Run shell scripts"],
+                "answer": "Define tasks triggered by other tasks"
+            },
+            {
+                "id": 6,
+                "question": "Which transport protocol does Ansible use by default?",
+                "options": ["SSH", "HTTP", "HTTPS", "FTP"],
+                "answer": "SSH"
+            },
+            {
+                "id": 7,
+                "question": "What does 'gather_facts' do in Ansible?",
+                "options": ["Collects system information", "Runs tasks", "Starts a service", "Copies files"],
+                "answer": "Collects system information"
+            },
+            {
+                "id": 8,
+                "question": "What are Ansible modules?",
+                "options": ["Reusable units of code", "Inventory files", "Playbook templates", "Configuration scripts"],
+                "answer": "Reusable units of code"
+            },
+            {
+                "id": 9,
+                "question": "What is the difference between 'hosts:' and 'tasks:' in a playbook?",
+                "options": ["'hosts:' specifies target hosts, 'tasks:' defines actions", "'tasks:' lists hosts, 'hosts:' runs actions", "No difference", "They are interchangeable"],
+                "answer": "'hosts:' specifies target hosts, 'tasks:' defines actions"
+            },
+            {
+                "id": 10,
+                "question": "What is 'ansible-vault' used for?",
+                "options": ["Encrypting sensitive data", "Running playbooks", "Managing inventory", "Testing modules"],
+                "answer": "Encrypting sensitive data"
+            }
+        ],
+
+            "Docker": [
+                {
+                    "id": 1,
+                    "question": "What is Docker?",
+                    "options": ["Containerization tool", "Virtualization platform", "Build system", "Monitoring tool"],
+                    "answer": "Containerization tool"
+                },
+                {
+                    "id": 2,
+                    "question": "What is the purpose of a Dockerfile?",
+                    "options": ["To automate the creation of images", "To monitor containers", "To configure networks", "To define volume mounts"],
+                    "answer": "To automate the creation of images"
+                },
+                {
+                    "id": 3,
+                    "question": "What does 'docker build' do?",
+                    "options": ["Builds a Docker image", "Starts a container", "Stops a container", "Pulls an image from Docker Hub"],
+                    "answer": "Builds a Docker image"
+                },
+                {
+                    "id": 4,
+                    "question": "What command lists all running containers?",
+                    "options": ["docker ps", "docker list", "docker run", "docker ls"],
+                    "answer": "docker ps"
+                },
+                {
+                    "id": 5,
+                    "question": "What is the difference between a container and an image?",
+                    "options": [
+                        "Image is a blueprint, container is a running instance",
+                        "Container is a blueprint, image is a running instance",
+                        "Both are the same",
+                        "Images store data, containers do not"
+                    ],
+                    "answer": "Image is a blueprint, container is a running instance"
+                },
+                {
+                    "id": 6,
+                    "question": "What does 'docker-compose' do?",
+                    "options": ["Manages multi-container applications", "Builds Docker images", "Monitors container health", "Creates Dockerfiles"],
+                    "answer": "Manages multi-container applications"
+                },
+                {
+                    "id": 7,
+                    "question": "What is a Docker volume?",
+                    "options": ["Persistent storage for containers", "A network layer", "A Docker image layer", "A process manager"],
+                    "answer": "Persistent storage for containers"
+                },
+                {
+                    "id": 8,
+                    "question": "What is the purpose of 'docker pull'?",
+                    "options": ["To fetch images from a registry", "To build images locally", "To remove containers", "To start services"],
+                    "answer": "To fetch images from a registry"
+                },
+                {
+                    "id": 9,
+                    "question": "What does the 'EXPOSE' instruction in a Dockerfile do?",
+                    "options": ["Defines ports for container communication", "Exposes environment variables", "Starts a service", "Defines container memory limits"],
+                    "answer": "Defines ports for container communication"
+                },
+                {
+                    "id": 10,
+                    "question": "What is a multi-stage build in Docker?",
+                    "options": [
+                        "A method to reduce image size",
+                        "A method to create multiple containers",
+                        "A way to manage networks",
+                        "A method to add storage to containers"
+                    ],
+                    "answer": "A method to reduce image size"
+                }
+            ],
+            
+            "Kubernetes": [
+                {
+                    "id": 1,
+                    "question": "What is Kubernetes?",
+                    "options": ["Container orchestration platform", "Build tool", "Database", "Version control system"],
+                    "answer": "Container orchestration platform"
+                },
+                {
+                    "id": 2,
+                    "question": "What does a Kubernetes pod represent?",
+                    "options": ["A single container or group of containers", "A virtual machine", "A namespace", "A node"],
+                    "answer": "A single container or group of containers"
+                },
+                {
+                    "id": 3,
+                    "question": "What is the purpose of a Service in Kubernetes?",
+                    "options": [
+                        "To expose applications to other pods or external clients",
+                        "To manage namespaces",
+                        "To monitor logs",
+                        "To restart containers"
+                    ],
+                    "answer": "To expose applications to other pods or external clients"
+                },
+                {
+                    "id": 4,
+                    "question": "What is kube-apiserver?",
+                    "options": ["Master component for cluster communication", "A node agent", "A container runtime", "A storage plugin"],
+                    "answer": "Master component for cluster communication"
+                },
+                {
+                    "id": 5,
+                    "question": "What is the difference between Deployment and StatefulSet?",
+                    "options": [
+                        "Deployment is for stateless apps, StatefulSet is for stateful apps",
+                        "Deployment is for databases, StatefulSet is for web apps",
+                        "StatefulSet uses ReplicaSets, Deployment doesn't",
+                        "No difference"
+                    ],
+                    "answer": "Deployment is for stateless apps, StatefulSet is for stateful apps"
+                },
+                {
+                    "id": 6,
+                    "question": "What does 'kubectl get pods' do?",
+                    "options": ["Lists all pods in the cluster", "Creates a pod", "Deletes a pod", "Gets the cluster configuration"],
+                    "answer": "Lists all pods in the cluster"
+                },
+                {
+                    "id": 7,
+                    "question": "What is an Ingress in Kubernetes?",
+                    "options": [
+                        "A resource to manage external access to services",
+                        "A method for container communication",
+                        "A storage volume",
+                        "A monitoring tool"
+                    ],
+                    "answer": "A resource to manage external access to services"
+                },
+                {
+                    "id": 8,
+                    "question": "What does Horizontal Pod Autoscaler do?",
+                    "options": [
+                        "Scales pods based on CPU or memory usage",
+                        "Scales nodes automatically",
+                        "Manages rolling updates",
+                        "Backs up data from pods"
+                    ],
+                    "answer": "Scales pods based on CPU or memory usage"
+                },
+                {
+                    "id": 9,
+                    "question": "What is etcd in Kubernetes?",
+                    "options": ["A key-value store for cluster state", "A network plugin", "A logging service", "A container runtime"],
+                    "answer": "A key-value store for cluster state"
+                },
+                {
+                    "id": 10,
+                    "question": "What is the function of a ReplicaSet?",
+                    "options": [
+                        "Ensures a specified number of pod replicas are running",
+                        "Manages networking",
+                        "Schedules pods on nodes",
+                        "Monitors container health"
+                    ],
+                    "answer": "Ensures a specified number of pod replicas are running"
+                }
+            ],
+            "Terraform": [
+                {
+                    "id": 1,
+                    "question": "What is Terraform?",
+                    "options": ["Infrastructure as Code tool", "Monitoring tool", "CI/CD pipeline", "Container runtime"],
+                    "answer": "Infrastructure as Code tool"
+                },
+                {
+                    "id": 2,
+                    "question": "What does 'terraform init' do?",
+                    "options": [
+                        "Initializes the working directory with configuration files",
+                        "Executes Terraform plans",
+                        "Deletes infrastructure",
+                        "Updates state files"
+                    ],
+                    "answer": "Initializes the working directory with configuration files"
+                },
+                {
+                    "id": 3,
+                    "question": "What is a 'backend' in Terraform?",
+                    "options": [
+                        "Defines where Terraform state is stored",
+                        "Manages container orchestration",
+                        "Defines the order of resource creation",
+                        "Runs Terraform modules"
+                    ],
+                    "answer": "Defines where Terraform state is stored"
+                },
+                {
+                    "id": 4,
+                    "question": "What does 'terraform plan' do?",
+                    "options": [
+                        "Shows the execution plan for changes",
+                        "Applies changes to infrastructure",
+                        "Initializes plugins",
+                        "Destroys resources"
+                    ],
+                    "answer": "Shows the execution plan for changes"
+                },
+                {
+                    "id": 5,
+                    "question": "What is the purpose of 'variables.tf' in Terraform?",
+                    "options": [
+                        "To define input variables for configurations",
+                        "To manage resource dependencies",
+                        "To define output values",
+                        "To initialize modules"
+                    ],
+                    "answer": "To define input variables for configurations"
+                },
+                {
+                    "id": 6,
+                    "question": "What does 'terraform apply' do?",
+                    "options": [
+                        "Applies changes to the infrastructure",
+                        "Destroys the infrastructure",
+                        "Checks syntax errors",
+                        "Creates a new workspace"
+                    ],
+                    "answer": "Applies changes to the infrastructure"
+                },
+                {
+                    "id": 7,
+                    "question": "What is a Terraform module?",
+                    "options": [
+                        "Reusable code for defining resources",
+                        "A database for state files",
+                        "A container runtime",
+                        "A logging tool"
+                    ],
+                    "answer": "Reusable code for defining resources"
+                },
+                {
+                    "id": 8,
+                    "question": "What does 'terraform destroy' do?",
+                    "options": [
+                        "Destroys all resources managed by Terraform",
+                        "Resets the working directory",
+                        "Deletes the state file",
+                        "Removes input variables"
+                    ],
+                    "answer": "Destroys all resources managed by Terraform"
+                },
+                {
+                    "id": 9,
+                    "question": "What is 'terraform state'?",
+                    "options": [
+                        "Stores mappings of resources in the real world to configurations",
+                        "Manages network configurations",
+                        "Runs Terraform modules",
+                        "Executes Terraform plans"
+                    ],
+                    "answer": "Stores mappings of resources in the real world to configurations"
+                },
+                {
+                    "id": 10,
+                    "question": "What is the purpose of 'outputs.tf' in Terraform?",
+                    "options": [
+                        "To define values to be output after execution",
+                        "To define input variables",
+                        "To store state files",
+                        "To initialize the working directory"
+                    ],
+                    "answer": "To define values to be output after execution"
+                }
+            ]
+        }
+        

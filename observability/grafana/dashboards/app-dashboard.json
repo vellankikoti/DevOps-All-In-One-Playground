@@ -1,0 +1,27 @@
+{
+    "title": "Application Metrics",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Request Latency",
+        "targets": [
+          {
+            "expr": "rate(http_request_duration_seconds_bucket[5m])",
+            "legendFormat": "{{le}} latency"
+          }
+        ]
+      },
+      {
+        "type": "stat",
+        "title": "Active Users",
+        "targets": [
+          {
+            "expr": "app_active_users_total",
+            "legendFormat": "Active Users"
+          }
+        ]
+      }
+    ],
+    "refresh": "5s"
+  }
+  

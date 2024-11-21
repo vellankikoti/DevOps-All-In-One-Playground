@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: database-deployment
+  name: database
+  namespace: devops-playground
 spec:
   replicas: 1
   selector:
@@ -13,35 +14,42 @@ spec:
         app: database
     spec:
       containers:
-      - name: database
-        image: postgres:13
+      - name: mysql
+        image: mysql:8.0
         ports:
-        - containerPort: 5432
+        - containerPort: 3306
         env:
-        - name: POSTGRES_USER
-          value: "devops"
-        - name: POSTGRES_PASSWORD
-          value: "password"
-        - name: POSTGRES_DB
-          value: "devops_db"
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootpassword
+        - name: MYSQL_DATABASE
+          value: devops_quiz
+        - name: MYSQL_USER
+          value: quizuser
+        - name: MYSQL_PASSWORD
+          value: quizpassword
         volumeMounts:
-        - name: db-init
-          mountPath: /docker-entrypoint-initdb.d
+        - name: db-storage
+          mountPath: /var/lib/mysql
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
       volumes:
-      - name: db-init
-        configMap:
-          name: db-init-config
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: db-pvc
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: database-service
+  name: database
+  namespace: devops-playground
 spec:
+  ports:
+  - port: 3306
+    targetPort: 3306
   selector:
     app: database
-  ports:
-    - protocol: TCP
-      port: 5432
-      targetPort: 5432
-  type: ClusterIP
-

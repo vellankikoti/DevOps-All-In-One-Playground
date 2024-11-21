@@ -1,14 +1,14 @@
-variable "eks_role_arn" {
-  description = "IAM role ARN for EKS cluster"
-  type        = string
+variable "aws_region" {
+  description = "The AWS region to deploy resources."
+  default     = "us-east-1"
 }
 
-variable "eks_node_role_arn" {
-  description = "IAM role ARN for EKS node group"
-  type        = string
+variable "cluster_name" {
+  description = "EKS cluster name."
+  default     = "devops-playground-cluster"
 }
 
-variable "subnet_ids" {
-  description = "List of VPC subnet IDs"
-  type        = list(string)
+variable "vpc_cidr" {
+  description = "VPC CIDR block."
+  default     = "10.0.0.0/16"
 }

@@ -1,0 +1,27 @@
+{
+    "title": "Server Resource Utilization",
+    "panels": [
+      {
+        "type": "gauge",
+        "title": "CPU Usage",
+        "targets": [
+          {
+            "expr": "sum(rate(node_cpu_seconds_total{mode!='idle'}[5m])) / sum(node_cpu_seconds_total) * 100",
+            "legendFormat": "CPU Usage (%)"
+          }
+        ]
+      },
+      {
+        "type": "graph",
+        "title": "Memory Usage",
+        "targets": [
+          {
+            "expr": "node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100",
+            "legendFormat": "Memory Available (%)"
+          }
+        ]
+      }
+    ],
+    "refresh": "10s"
+  }
+  

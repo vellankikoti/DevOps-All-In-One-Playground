@@ -65,66 +65,62 @@ DevOps-All-In-One-Playground/
 ├── sample-app/                  # Sample application
 │   ├── backend/                 # Python/Flask backend
 │   │   ├── app.py               # Main application file
-│   │   ├── requirements.txt      # Python dependencies
-│   │   ├── Dockerfile            # Dockerfile for backend
-│   │   ├── tests/                # Unit tests for backend
-│   │   │   └── test_app.py       # Example test file
-│   │   └── README.md             # Documentation for backend
+│   │   ├── requirements.txt     # Python dependencies
+│   │   ├── Dockerfile           # Dockerfile for backend
+│   │   ├── tests/               # Unit tests for backend
+│   │   │   └── test_app.py      # Example test file
+│   │   └── README.md            # Documentation for backend
 │   ├── frontend/                # React frontend
 │   │   ├── src/                 # Source files
-│   │   │   ├── App.js           # Main React component
-│   │   │   ├── index.js         # Entry point for React app
-│   │   │   └── components/      # React components
 │   │   ├── public/              # Public assets
-│   │   │   └── index.html       # HTML template
-│   │   ├── package.json          # Node.js dependencies
-│   │   ├── Dockerfile            # Dockerfile for frontend
-│   │   └── README.md             # Documentation for frontend
-│   └── database/                # Database scripts
-│       └── init.sql             # SQL script to initialize the database
+│   │   ├── package.json         # Node.js dependencies
+│   │   ├── Dockerfile           # Dockerfile for frontend
+│   │   └── README.md            # Documentation for frontend
+│   ├── database/                # Database setup
+│   │   ├── schema.sql           # SQL schema
+│   │   ├── Dockerfile           # Dockerfile for database
+│   │   └── README.md            # Documentation for database
+│   └── README.md                # Overall app documentation
 ├── docker/                      # Docker configurations
-│   ├── docker-compose.yml        # Docker Compose file
-│   ├── .env                     # Environment variables for Docker
-│   └── README.md                 # Documentation for Docker setup
+│   ├── docker-compose.yml       # Docker Compose file
+│   ├── .env                     # Environment variables
+│   └── README.md                # Docker setup instructions
 ├── kubernetes/                  # Kubernetes manifests
-│   ├── deployment.yaml           # Deployment configuration
-│   ├── service.yaml              # Service configuration
-│   ├── ingress.yaml              # Ingress configuration
-│   └── README.md                 # Documentation for Kubernetes setup
+│   ├── deployment.yaml          # Deployment configuration
+│   ├── service.yaml             # Service configuration
+│   ├── ingress.yaml             # Ingress configuration
+│   ├── configmap.yaml           # ConfigMap for environment variables
+│   └── README.md                # Kubernetes setup instructions
+├── terraform/                   # Terraform configurations
+│   ├── main.tf                  # Main Terraform file
+│   ├── variables.tf             # Variables for Terraform
+│   ├── outputs.tf               # Outputs for Terraform
+│   └── README.md                # Terraform setup instructions
 ├── cicd/                        # CI/CD configurations
-│   ├── Jenkinsfile               # Jenkins pipeline configuration
-│   ├── .github/                  # GitHub Actions workflows
+│   ├── Jenkinsfile              # Jenkins pipeline script
+│   ├── .github/                 # GitHub Actions workflows
 │   │   └── workflows/
-│   │       └── ci.yml            # CI workflow for GitHub Actions
-│   └── README.md                 # Documentation for CI/CD setup
+│   │       └── ci.yml           # CI workflow for GitHub Actions
+│   └── README.md                # CI/CD setup instructions
 ├── argocd/                      # ArgoCD setup
-│   ├── applications/             # ArgoCD application definitions
-│   │   └── devops-app.yaml       # Example ArgoCD application
-│   ├── projects/                 # ArgoCD project definitions
-│   │   └── devops-project.yaml    # Example ArgoCD project
-│   └── README.md                 # Documentation for ArgoCD setup
-├── terraform/                   # IaC configurations
-│   ├── main.tf                   # Main Terraform configuration
-│   ├── variables.tf              # Variables for Terraform
-│   ├── outputs.tf                # Outputs for Terraform
-│   └── README.md                 # Documentation for Terraform setup
-├── ansible/                     # Ansible playbooks for configuration management
-│   ├── playbook.yml              # Main Ansible playbook
-│   ├── inventory.ini             # Inventory file for Ansible
-│   └── README.md                 # Documentation for Ansible setup
+│   ├── applications/            # ArgoCD application definitions
+│   │   └── quiz-platform.yaml   # ArgoCD app for quiz platform
+│   ├── projects/                # ArgoCD project definitions
+│   │   └── devops-project.yaml  # ArgoCD project definition
+│   └── README.md                # ArgoCD setup instructions
 ├── observability/               # Monitoring tools
-│   ├── prometheus/               # Prometheus configuration
-│   │   └── prometheus.yml        # Prometheus configuration file
-│   ├── grafana/                  # Grafana configuration
-│   │   └── dashboards/           # Grafana dashboards
-│   ├── opentelemetry/            # OpenTelemetry configuration
-│   │   └── otel-collector.yaml    # OpenTelemetry collector configuration
-│   └── README.md                 # Documentation for observability setup
-└── docs/                        # Documentation
-    ├── INSTALL.md                # Installation instructions
-    ├── USAGE.md                  # Usage instructions
-    ├── CONTRIBUTING.md           # Contribution guidelines
-    └── README.md                 # General documentation for the repository```
+│   ├── prometheus/              # Prometheus configuration
+│   ├── grafana/                 # Grafana configuration
+│   ├── opentelemetry/           # OpenTelemetry collector
+│   ├── jaeger/                  # Jaeger tracing setup
+│   └── README.md                # Observability setup instructions
+├── docs/                        # Documentation
+│   ├── INSTALL.md               # Installation instructions
+│   ├── USAGE.md                 # Usage instructions
+│   ├── CONTRIBUTING.md          # Contribution guidelines
+│   └── README.md                # General repo documentation
+└── LICENSE                      # MIT License
+
 ```
 
 ## 🛠 Tools Integrated

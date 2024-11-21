@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.3'
 
 services:
   database:
@@ -19,7 +19,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ../sample-app/backend
       dockerfile: Dockerfile
     container_name: devops_backend
     restart: always
@@ -38,7 +38,7 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ../sample-app/frontend
       dockerfile: Dockerfile
     container_name: devops_frontend
     restart: always
